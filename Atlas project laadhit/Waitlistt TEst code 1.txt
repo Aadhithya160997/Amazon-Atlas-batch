@@ -1,0 +1,9 @@
+public class WaitlistTest {
+    public static void main(String[] args) {
+        WaitlistService waitlistService = new WaitlistService();
+
+        // Test Case 1: Enroll a student when seats are available
+        System.out.println("Test Case 1: Enroll a student when seats are available");
+        waitlistService.attemptEnrollment("student123", "CSE101");
+    }
+}

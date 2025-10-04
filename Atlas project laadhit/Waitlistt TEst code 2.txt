@@ -1,0 +1,20 @@
+import com.example.enrollment.dynamodb.WaitlistService;
+
+public class WaitlistTest {
+    public static void main(String[] args) {
+        WaitlistService waitlistService = new WaitlistService();
+
+        // Test Case 1: Enroll a student when seats are available
+        waitlistService.attemptEnrollment("student123", "CSE101");
+
+        // Test Case 2: Add a student to waitlist when no seats are available
+        waitlistService.attemptEnrollment("student124", "CSE101");
+        waitlistService.attemptEnrollment("student125", "CSE101");
+        waitlistService.attemptEnrollment("student126", "CSE101");
+        waitlistService.attemptEnrollment("student127", "CSE101");
+        // Test Case 3: Simulate a student dropping the course, freeing up a seat
+        waitlistService.handleSeatDrop("CSE101");  // This should move the first waitlisted student to enrolled
+    }
+}
+
+

@@ -1,0 +1,1 @@
+aws dynamodb create-table --table-name Waitlist --attribute-definitions AttributeName=courseId,AttributeType=S AttributeName=timestamp,AttributeType=S --key-schema AttributeName=courseId,KeyType=HASH AttributeName=timestamp,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 --endpoint-url http://localhost:8000 --output json --debug
